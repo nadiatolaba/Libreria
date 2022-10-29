@@ -1,5 +1,5 @@
 import { Libro } from './claseLibro';
-import { Padre } from './clasePadre';
+import { Articulo } from './clasePadre';
 import { Revista } from './claseRevista';
 
 export class Cliente {
@@ -36,7 +36,7 @@ export class Cliente {
     public getDni(): number {
         return this.dni;
     }
-    
+
     public getDireccion(): string {
         return this.direccion;
     }
@@ -69,45 +69,17 @@ export class Cliente {
         this.listComprasRevista.push(revista);
     }
 
-    public buscarLibro(articulo: Padre): void {
-        let encontrado: boolean = false;
-        for (let i: number = 0; i < this.listComprasLibro.length; i++) {
-            if (articulo.getTitulo() === this.listComprasLibro[i].getTitulo()) {
-            encontrado = true;
-            }
-        }
-        if (encontrado === true) {
-        console.log(`El libro ${articulo.getTitulo()} fue comprado`);
-        } else {
-        console.log(`El libro ${articulo.getTitulo()} no fue comprado`);
-        }
-    }
-
-    public buscarRevista(articulo: Padre): void {
-        let encontrado: boolean = false;
-        for (let i: number = 0; i < this.listComprasRevista.length; i++) {
-            if (articulo.getTitulo() === this.listComprasRevista[i].getTitulo()) {
-            encontrado = true;
-            }
-        }
-        if (encontrado === true) {
-        console.log(`El autor ${articulo.getTitulo()} fue comprada`);
-        } else {
-        console.log(`La revista ${articulo.getTitulo()} no fue comprada`);
-        }
-    }
-
     public leGustaLibro(libro: Libro): void {
         let encontrado: boolean = false;
         for (let i: number = 0; i < this.listAutorFav.length; i++) {
             if (libro.getAutor() === this.listAutorFav[i]) {
-            encontrado = true;
+                encontrado = true;
             }
         }
         if (encontrado === true) {
-        console.log(`El autor ${libro.getAutor()} es favorito`);
+            console.log(`El autor ${libro.getAutor()} es favorito`);
         } else {
-        console.log(`El autor ${libro.getAutor()} no es favorito`);
+            console.log(`El autor ${libro.getAutor()} no es favorito`);
         }
     }
 
@@ -116,18 +88,18 @@ export class Cliente {
         let encontradoGenero: boolean = false;
         for (let i: number = 0; i < this.listAutorFav.length; i++) {
             if (libro.getAutor() === this.listAutorFav[i]) {
-            encontradoAutor = true;
-            }
-            for (let i: number = 0; i < this.listGenFav.length; i++) {
-                if (libro.getGenero() === this.listGenFav[i]) {
-                    encontradoGenero = true;
+                encontradoAutor = true;
+                for (let i: number = 0; i < this.listGenFav.length; i++) {
+                    if (libro.getGenero() === this.listGenFav[i]) {
+                        encontradoGenero = true;
+                    }
                 }
             }
         }
         if (encontradoAutor === true && encontradoGenero === true) {
-        console.log(`El autor ${libro.getAutor()} y el genero "${libro.getGenero()}" son favoritos`);
+            console.log(`El autor ${libro.getAutor()} y el genero "${libro.getGenero()}" son favoritos`);
         } else {
-        console.log(`El autor ${libro.getAutor()} y el genero "${libro.getGenero()}" no son favoritos`);
+            console.log(`El autor ${libro.getAutor()} y el genero "${libro.getGenero()}" no son favoritos`);
         }
     }
 }

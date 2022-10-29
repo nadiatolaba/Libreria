@@ -1,4 +1,4 @@
-export class Padre {
+export class Articulo {
     protected titulo: string;
     protected autor: string;
     protected precio: number;
@@ -16,7 +16,7 @@ export class Padre {
     public getAutor(): string {
         return this.autor;
     }
-    
+
     public getPrecio(): number {
         return this.precio;
     }

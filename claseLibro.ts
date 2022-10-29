@@ -1,6 +1,6 @@
-import { Padre } from "./clasePadre";
+import { Articulo } from "./clasePadre";
 
-export class Libro extends Padre {
+export class Libro extends Articulo {
     private cantPaginas: number;
     private resumen: string;
     private genero: string;
