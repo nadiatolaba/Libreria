@@ -1,6 +1,6 @@
-import { Padre } from "./clasePadre";
+import { Articulo } from "./clasePadre";
 
-export class Revista extends Padre {
+export class Revista extends Articulo {
     private numero: number;
     private año: number;
 
